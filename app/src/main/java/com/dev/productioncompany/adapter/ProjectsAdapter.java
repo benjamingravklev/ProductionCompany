@@ -13,8 +13,6 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dev.productioncompany.CreateNewProjectActivity;
-import com.dev.productioncompany.LoginActivity;
-import com.dev.productioncompany.MainActivity;
 import com.dev.productioncompany.R;
 import com.dev.productioncompany.model.ProjectModel;
 

@@ -2,26 +2,16 @@ package com.dev.productioncompany;
 
 import static com.dev.productioncompany.CreateNewProjectActivity.projectList;
 
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
-
 import com.dev.productioncompany.adapter.ProjectsAdapter;
-import com.dev.productioncompany.model.ProjectModel;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 
 public class RetrieveListActivity extends AppCompatActivity {
 
