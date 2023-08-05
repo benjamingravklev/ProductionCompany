@@ -13,30 +13,25 @@ import android.widget.Toast;
 import com.dev.productioncompany.model.UserModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
     AppCompatEditText etUsername, etPassword;
     String strUsername, strPassword;
     AppCompatButton btnLogin;
-    ArrayList<UserModel> list = new ArrayList<>();
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
 
-        list.clear();
-        list.add(new UserModel("aaa", "aaa@123"));
-        list.add(new UserModel("bbb", "bbb@123"));
-        list.add(new UserModel("ccc", "ccc@123"));
-        list.add(new UserModel("ddd", "ddd@123"));
-        list.add(new UserModel("eee", "eee@123"));
+        DataPersistencyHelper.context = getApplicationContext();
+        List<UserModel> list = DataPersistencyHelper.loadData();
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override

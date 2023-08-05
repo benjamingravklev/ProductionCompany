@@ -3,12 +3,14 @@ package com.dev.productioncompany.model;
 import java.io.Serializable;
 
 public class ProjectModel implements Serializable {
+    String id;
     String name, contract, list, datetime;
 
     public ProjectModel() {
     }
 
-    public ProjectModel(String name, String contract, String list, String datetime) {
+    public ProjectModel(String id, String name, String contract, String list, String datetime) {
+        this.id = id;
         this.name = name;
         this.contract = contract;
         this.list = list;
@@ -45,5 +47,13 @@ public class ProjectModel implements Serializable {
 
     public void setList(String list) {
         this.list = list;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
