@@ -2,6 +2,7 @@ package com.dev.productioncompany;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -95,7 +96,6 @@ public class CreateNewProjectActivity extends AppCompatActivity {
                     newProject.put("datetime", currentDateAndTime);
 
                     if (getIntent().getExtras() != null){
-                        // This is an existing project, update it
                         db.collection("projects").document(model.getId()) // use the stored document ID
                                 .set(newProject)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -114,7 +114,6 @@ public class CreateNewProjectActivity extends AppCompatActivity {
                                     }
                                 });
                     } else {
-                        // This is a new project, add it
                         db.collection("projects")
                                 .add(newProject)
                                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -143,3 +142,4 @@ public class CreateNewProjectActivity extends AppCompatActivity {
     }
 
 }
+
